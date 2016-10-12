@@ -1,0 +1,13 @@
+{"name":"fries_","price":"50","box":"checked","state":"true","time":"lunch","_id":"PUsejSR518uZxDYJ"}
+{"name":"chapatti","price":"50","box":"null","state":"false","time":"breakfast","_id":"fuO3uQYQitukmBya"}
+{"name":"beans_","price":"35","box":"null","state":"false","time":"lunch","_id":"nIZwD2wQrszr7q7g"}
+{"name":"beans__","price":"20","box":"checked","state":"true","time":"supper","_id":"rh0eItszzFj1bUGo"}
+{"name":"ugali__","box":"checked","price":"5","time":"supper","state":"true","_id":"tgQ3qEZq1L5ll4CN"}
+{"name":"mukimo__","box":"checked","price":"5","time":"supper","state":"true","_id":"tgQmqEZq1L5lL8CN"}
+{"name":"queen cake","box":"checked","price":"5","time":"breakfast","state":"true","_id":"tgQnqEZq1L5lL8CN"}
+{"name":"githeri__","box":"checked","price":"5","time":"supper","state":"true","_id":"tgQnqEZq1L5ll2CN"}
+{"name":"tea","box":"checked","price":"5","time":"breakfast","state":"true","_id":"tgQnqEZq1L5ll6CN"}
+{"name":"tea_","box":"checked","price":"5","time":"lunch","state":"true","_id":"tgQnqEZq1k5ll6CN"}
+{"name":"bread","box":"checked","price":"5","time":"breakfast","state":"true","_id":"tgQnqEZq1z5ll6CN"}
+{"name":"bread_","box":"checked","price":"5","time":"lunch","state":"true","_id":"tgQnqEZquz5ll6CN"}
+{"name":"githeri_","box":"checked","price":"5","time":"lunch","state":"true","_id":"tgQnqEpq1L5ll2CN"}

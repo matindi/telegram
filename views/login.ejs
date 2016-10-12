@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script src="/js/jquery-3.1.1.js"></script>
+  <script src="/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+  <script src="/bootstrap-switch-master/dist/js/bootstrap-switch.min.js"></script>
+
+  <link rel="stylesheet" href="/bootstrap-3.3.7/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
+
+  <link href="/bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="add">add meal</a></li>
+    <li><a href="delete">delete meal</a></li>
+    <li><a href="#">change price</a></li>
+  </ul>
+
+  <div class="container">
+    <h1>Breakfast</h1>
+    <div class="row">
+
+      <% for(var i=0; i<breakfast.length; i++) {%>
+        <div class="col-md-2">
+          <h4><%= breakfast[i] %></h4>
+
+
+          <input type="checkbox" name="<%= breakfast[i] %>" <%= box_breakfast[i] %>>
+
+        </div>
+
+        <% } %>
+
+
+
+      </div>
+    </div>
+    <br><br><br>
+
+    <div class="container">
+      <h1>Lunch</h1>
+      <div class="row">
+
+        <% for(var i=0; i<lunch.length; i++) {%>
+          <div class="col-md-2">
+            <h4><%= lunch_view[i] %></h4>
+
+
+            <input type="checkbox" name="<%= lunch[i] %>" <%= box_lunch[i] %>>
+          </div>
+
+          <% } %>
+
+
+
+        </div>
+      </div>
+      <br><br><br>
+
+      <div class="container">
+        <h1>Supper</h1>
+        <div class="row">
+
+          <% for(var i=0; i<supper.length; i++) {%>
+            <div class="col-md-2">
+              <h4><%= supper_view[i] %></h4>
+
+
+
+              <input type="checkbox" name="<%= supper[i] %>" <%= box_supper[i] %>>
+            </div>
+
+            <% } %>
+
+
+
+          </div>
+        </div>
+        <br><br><br>
+        <br><br><br>
+
+        <script type="text/javascript">
+        var socket = io('http://localhost:5000');
+        socket.on('greeting-from-server', function (message) {
+          document.body.appendChild(
+            document.createTextNode(message.greeting)
+          );
+          <% for(var i=0; i<breakfast.length; i++) {%>
+            $("[name='<%= breakfast[i] %>']").bootstrapSwitch().on('switchChange.bootstrapSwitch', function(event, state) {
+              console.log("<%= breakfast[i] %> : " + state); // true | false
+
+              var  brian = [state,'<%= breakfast[i] %>'];
+              socket.emit('greeting-from-client', brian
+            );
+          });
+          <% } %>
+
+
+
+          <% for(var i=0; i<lunch.length; i++) {%>
+            $("[name='<%= lunch[i] %>']").bootstrapSwitch().on('switchChange.bootstrapSwitch', function(event, state) {
+              console.log("<%= lunch[i] %> : " + state); // true | false
+
+              var  brian = [state,'<%= lunch[i] %>'];
+              socket.emit('greeting-from-client', brian
+            );
+          });
+          <% } %>
+
+
+
+          <% for(var i=0; i<supper.length; i++) {%>
+            $("[name='<%= supper[i] %>']").bootstrapSwitch().on('switchChange.bootstrapSwitch', function(event, state) {
+              console.log("<%= supper[i] %> : " + state); // true | false
+
+              var  brian = [state,'<%= supper[i] %>'];
+              socket.emit('greeting-from-client', brian
+            );
+          });
+          <% } %>
+
+        });
+
+
+        </script>
+      </body>
+      </html>

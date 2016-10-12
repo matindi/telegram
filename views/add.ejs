@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="/js/jquery-3.1.1.js"></script>
+  <script src="/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+  <script src="/bootstrap-switch-master/dist/js/bootstrap-switch.min.js"></script>
+
+  <link rel="stylesheet" href="/bootstrap-3.3.7/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
+
+  <link href="/bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <ul class="nav nav-tabs">
+    <li><a href="/">Home</a></li>
+    <li><a href="add">add meal</a></li>
+    <li><a href="delete">delete meal</a></li>
+    <li><a href="#">change price</a></li>
+    <li><a href="#">Add user</a></li>
+  </ul>
+  <form role="form" action="send" method="post">
+    <div class="form-group">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1">
+            <label for="name">Item'sName</label>
+          </div>
+          <div class="col-md-5">
+
+            <input type="text" name="item_name" class="form-control" id="name"
+            placeholder="Enter Name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <label for="name">Item's Price</label>
+          </div>
+          <div class="col-md-5">
+
+            <input type="text" name="item_price" class="form-control" id="name"
+            placeholder="Enter price in ksh">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+            <label for="name">Time to be served<br>(only select one at a time)</label>
+          </div>
+          <div class="col-md-11">
+            <div class="checkbox">
+              <label><input name="food" type="checkbox" value="breakfast">Breakfast</label>
+            </div>
+            <div class="checkbox">
+              <label><input name="food" type="checkbox" value="lunch">Lunch</label>
+            </div>
+            <div class="checkbox">
+              <label><input name="food" type="checkbox" value="supper">supper</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <button type="submit" action="form"class="btn btn-default">Submit</button>
+        </div>
+      </div>
+    </form>
+  </body>
+  </html>

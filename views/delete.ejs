@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="/js/jquery-3.1.1.js"></script>
+  <script src="/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+  <script src="/bootstrap-switch-master/dist/js/bootstrap-switch.min.js"></script>
+
+  <link rel="stylesheet" href="/bootstrap-3.3.7/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
+
+  <link href="/bootstrap-switch-master/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="/">Home</a></li>
+    <li><a href="add">add meal</a></li>
+    <li><a href="delete">delete meal</a></li>
+    <li><a href="#">change price</a></li>
+  </ul>
+  <form role="form" action="delete_items" method="post">
+    <div class="form-group">
+      <div class="container">
+        <h1>Breakfast</h1>
+        <div class="row">
+
+          <% for(var i=0; i<breakfast.length; i++) {%>
+            <div class="col-md-2">
+
+
+              <label><input name="delete_value" type="checkbox" value="<%= breakfast[i] %>"><%= breakfast[i] %></label>
+
+
+            </div>
+
+            <% } %>
+
+
+
+          </div>
+        </div>
+        <br><br><br>
+
+        <div class="container">
+          <h1>Lunch</h1>
+          <div class="row">
+
+            <% for(var i=0; i<lunch.length; i++) {%>
+              <div class="col-md-2">
+
+
+
+                <label><input name="delete_value" type="checkbox" value="<%= lunch[i] %>"><%= lunch_view[i] %></label>
+              </div>
+
+              <% } %>
+
+
+
+            </div>
+          </div>
+          <br><br><br>
+
+          <div class="container">
+            <h1>Supper</h1>
+            <div class="row">
+
+              <% for(var i=0; i<supper.length; i++) {%>
+                <div class="col-md-2">
+
+
+                  <label><input name="delete_value" type="checkbox" value="<%= supper[i] %>"><%= supper_view[i] %></label>
+                </div>
+
+                <% } %>
+<br><br>
+          <button type="submit" action="form"class="btn btn-default">Submit checked items for deleting</button>
+
+              </div>
+            </div>
+            <br><br><br>
+            <br><br><br>
+          </div>
+        </form>
+      </body>
+      </html>
